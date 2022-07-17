@@ -3,6 +3,7 @@ export interface IProduct {
                               name: string,
                               quantity: number,
                               price: number,
-                              img?: string
-                              category_id : number
+                              img?: string,
+                              category_id : number,
+                              totPrice?:number
 }

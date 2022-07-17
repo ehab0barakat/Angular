@@ -57,26 +57,94 @@
 
     </div>
     <div class="col-sm-8 bg-dark ">
-
-
       <div class="card mt-4" style="width: 18rem;">
 
         <img *ngIf="imgShow" src="{{class_store.logo}}" style="width: 100px ;" class="card-img-top" alt="...">
         <div *ngIf="!imgShow" style="height: 125px ;">  {{ClientName}} thnQ for buying  </div>
-
-
         <div class="card-body">
           <h5 class="card-title">{{ClientName}}</h5>
         </div>
         <ul class="list-group list-group-flush">
-          <li *ngFor="let card of class_store.branch"   class="list-group-item">{{card}}</li>
+          <li *ngFor="let card of class_store.branch"class="list-group-item">{{card}}</li>
         </ul>
         <div class="card-body">
-
-        <button class="btn btn-primary" (click)="changeCard()" > buy </button>
+        <button class="btn btn-primary" (click)="changeCard()" > add </button>
 
         </div>
       </div>
     </div>
+
+    <select class="form-select my-3 w-25"  #teams [(ngModel)]="selectedCat" (change)="onSelect(teams.value)" aria-label="Default select example">
+      <option selected  [attr.value]="0">ALL</option>
+      <option *ngFor="let cat of categorys" [attr.value]="cat.id">{{cat.name}}</option>
+    </select>
+
+    <app-sub-product [selected]="selectedCat" (onCardChangeWant)="onCardChangeWant($event)" (onCardChange)="onCardChange($event) " ></app-sub-product>
+
+<div>{{cardDataArr}}</div>
+
+
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">name</th>
+          <th scope="col">price</th>
+          <!-- <th scope="col">Handle</th> -->
+        </tr>
+      </thead>
+      <tbody>
+
+
+        <ng-container *ngFor="let product of cardDataArr ; let i=index " >
+
+
+          <tr>
+            <td>{{product.name|uppercase}}</td>
+            <td><img src="{{product.img}}" width="100px" alt=""></td>
+            <td>{{product.totPrice |currency:"USD" }}</td>
+          </tr>
+        </ng-container>
+
+        <tr>
+          <td></td>
+          <td></td>
+          <td> TOTAL {{finallTotPrice |currency:"USD"}}</td>
+        </tr>
+
+
+
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="my-5">
+
+      <input type="text" [(ngModel)]="idCard"  >
+      <p>{{idCard|idCard}}</p>
+
+      <input type="text" [(ngModel)]="Card"  >
+      <p>{{Card|credit}}</p>
+
+    </div>
+
+
   </div>
 </div>

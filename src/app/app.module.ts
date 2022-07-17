@@ -6,17 +6,29 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { ProductsComponent } from './Components/products/products.component';
+import { DecreseDirective } from './Directives/decrese.directive';
+import { FormsModule } from '@angular/forms';
+import { CurrencyPipe } from './Pipes/currency.pipe';
+import { IdCardPipe } from './Pipes/id-card.pipe';
+import { CreditPipe } from './Pipes/credit.pipe';
+import { SubProductComponent } from './Components/sub-product/sub-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ProductsComponent
+    ProductsComponent,
+    DecreseDirective,
+    CurrencyPipe,
+    IdCardPipe,
+    CreditPipe,
+    SubProductComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
