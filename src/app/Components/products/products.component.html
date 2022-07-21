@@ -74,7 +74,7 @@
       </div>
     </div>
 
-    <select class="form-select my-3 w-25"  #teams [(ngModel)]="selectedCat" (change)="onSelect(teams.value)" aria-label="Default select example">
+    <select class="form-select my-3 w-25"  #teams [(ngModel)]="selectedCat"  aria-label="Default select example">
       <option selected  [attr.value]="0">ALL</option>
       <option *ngFor="let cat of categorys" [attr.value]="cat.id">{{cat.name}}</option>
     </select>

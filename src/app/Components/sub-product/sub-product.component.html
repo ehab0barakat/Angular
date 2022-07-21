@@ -1,37 +1,38 @@
 
 
-    <table class="table mb-5">
-      <thead>
-        <tr>
-          <th scope="col">No</th>
-          <th scope="col">name</th>
-          <th scope="col">img</th>
-          <th scope="col">quantity</th>
-          <th scope="col">price</th>
-          <th scope="col">price</th>
-          <th scope="col">what u want</th>
-          <th scope="col"></th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody>
+<table class="table mb-5">
+<thead>
+  <tr>
+    <th scope="col">No</th>
+    <th scope="col">name</th>
+    <th scope="col">img</th>
+    <th scope="col">quantity</th>
+    <th scope="col">price</th>
+    <th scope="col">price</th>
+    <th scope="col">what u want</th>
+    <th scope="col"></th>
+    <th scope="col"></th>
+  </tr>
+</thead>
+<tbody>
 
 
 
-        <ng-container *ngFor="let product of newProducts ; let i=index " >
-            <tr *ngIf="product.quantity > 0 " [ngClass]="{'bg-warning': product.quantity == 1, 'text-white': product.quantity == 1}"  >
-              <th scope="row" [ngStyle]="{'background-color': product.quantity == 1 ? 'white': 'black' , 'color': product.quantity > 1 ? 'white': 'black' }" > {{i +1 }}</th>
-              <td>{{product.name|uppercase}}</td>
-              <td><img src="{{product.img}}" width="100px" alt=""></td>
-              <td><input type="number"  style="background: transparent; border: none ;"  [(ngModel)]="product.quantity"></td>
-              <td>{{product.price|currency :"USD"}}</td>
-              <td>{{product.price| ustoeg | currency:"EGY" }}</td>
-              <td><input type="number"  style="background: transparent; border: none ;" #orderd    value="1" ></td>
+  <ng-container *ngFor="let product of newProducts ; let i=index " >
+      <tr *ngIf="product.quantity > 0 " [ngClass]="{'bg-warning': product.quantity == 1, 'text-white': product.quantity == 1}"  >
+        <th scope="row" [ngStyle]="{'background-color': product.quantity == 1 ? 'white': 'black' , 'color': product.quantity > 1 ? 'white': 'black' }" > {{i +1 }}</th>
+        <td>{{product.name|uppercase}}</td>
+        <td><img src="{{product.img}}" width="100px" alt=""></td>
+        <td><input type="number"  style="background: transparent; border: none ;"  [(ngModel)]="product.quantity"></td>
+        <td>{{product.price|currency :"USD"}}</td>
+        <td>{{product.price| ustoeg | currency:"EGY" }}</td>
+        <td><input type="number"  style="background: transparent; border: none ;" #orderd    value="1" ></td>
+        <td>{{product.id}}</td>
+        <td><button class="btn btn-warning" bordder (click)="GetProductId(product.id)" > ADD TO CARD </button></td>
 
-              <td><button class="btn btn-warning" bordder (click)="GetProductId(product.id)" > ADD TO CARD </button></td>
-              <td><button class="btn btn-danger"  bordder (click)=" decrese(product , +orderd.value , +product.quantity )" > ADD TO CARD </button></td>
-            </tr>
-          </ng-container>
+        <td><button class="btn btn-danger"  bordder (click)=" decrese(product , +orderd.value , +product.quantity )" > ADD TO CARD </button></td>
+      </tr>
+    </ng-container>
 
-      </tbody>
-    </table>
+</tbody>
+</table>

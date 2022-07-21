@@ -1,0 +1,18 @@
+<div class="card" style="width: 18rem;">
+  <img [src]="prodata[0].img" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{prodata[0].name}}</h5>
+    <p class="card-text">Lorem ipsum dolor sit amet consectetur imus ut.</p>
+
+    <p class="card-text">price :{{prodata[0].price}}</p>
+    <p class="card-text">quantity : {{prodata[0].quantity}}</p>
+    <div>
+      <button class="btn btn-primary" (click)="back(prodata[0].id)">back</button>
+      <button class="btn btn-warning" (click)="next(prodata[0].id)">next</button>
+    </div>
+    <div class="p-1">
+      <a href="#" class="btn btn-danger ">BUY</a>
+    </div>
+
+  </div>
+</div>

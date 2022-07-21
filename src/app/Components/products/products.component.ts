@@ -2,6 +2,9 @@ import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ICategory } from 'src/app/Model/icategory';
 import { ClassStore } from 'src/app/Model/class-store';
 import { IProduct } from 'src/app/Model/iproduct';
+import { ProductsServiceService } from 'src/app/Services/products-service.service';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -11,19 +14,16 @@ import { IProduct } from 'src/app/Model/iproduct';
 })
 export class ProductsComponent implements OnInit , OnChanges {
 
-  categorys:ICategory[] = [{id : 1 , name : 'electronics'},
-                           {id : 2 , name : 'clothes'},
-                           {id : 3 , name : 'cars'},
-                           {id : 4 , name : 'doors'},
-                           {id : 5 , name : 'grocery'},
-                           {id : 6 , name : 'canned food'}
-]
 
 
 
   class_store:ClassStore ;
 
-  constructor() {
+  categorys:ICategory[] = this.service.categorys ;
+
+
+  constructor(public service:ProductsServiceService ,public router: Router) {
+    
     this.class_store = new ClassStore( "book shop" , ["book one" , "book two" , "book three" , "book four"] , "../../../assets/l-2.png")
   }
   ngOnChanges(changes: SimpleChanges): void {
@@ -39,15 +39,9 @@ export class ProductsComponent implements OnInit , OnChanges {
 
   selectedCat:number = 0 ;
 
-  onSelect(val:string){
-    this.selectedCat = +val;
-    console.log("ehab")
-  }
-
-
 
   cardDataArr:IProduct[] = [];
-  
+
   finallTotPrice:number = 0
 
   order:number = 1

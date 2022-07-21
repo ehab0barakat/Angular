@@ -29,30 +29,14 @@ constructor(public service:ProductsServiceService ,
 
 GetProductId(id:number){
   console.log(id)
-  this.router.navigate(['Products',id]);
+  this.router.navigate(['products',id]);
 }
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-newProducts:IProduct[] = this.service.productList.filter((el)=> el.quantity > 0) ;
+newProducts:IProduct[] = this.service.productList.filter((el) => el.quantity > 0) ;
 
 
 ngOnChanges(): void {
