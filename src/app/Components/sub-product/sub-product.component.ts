@@ -18,10 +18,10 @@ export class SubProductComponent implements OnInit , OnChanges {
 
 
 
-constructor(public service:ProductsServiceService ,
-              public router: Router) {
-  this.onCardChange = new EventEmitter<object>();
-  this.onCardChangeWant = new EventEmitter<number>();
+constructor(  public service:ProductsServiceService ,
+              public router: Router ) {
+              this.onCardChange = new EventEmitter<object>();
+              this.onCardChangeWant = new EventEmitter<number>();
 }
 
 
@@ -60,8 +60,11 @@ ngOnChanges(): void {
 
   decrese(val:IProduct , order:number , quantity:number){
     if(order<= quantity && order > 0){
+
       this.onCardChangeWant.emit(order);
+
       this.onCardChange.emit(val);
+      
       val.quantity = val.quantity - order  ;
     }
 

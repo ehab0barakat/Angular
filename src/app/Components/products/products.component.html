@@ -74,12 +74,15 @@
       </div>
     </div>
 
+
+
+
     <select class="form-select my-3 w-25"  #teams [(ngModel)]="selectedCat"  aria-label="Default select example">
       <option selected  [attr.value]="0">ALL</option>
       <option *ngFor="let cat of categorys" [attr.value]="cat.id">{{cat.name}}</option>
     </select>
 
-    <app-sub-product [selected]="selectedCat" (onCardChangeWant)="onCardChangeWant($event)" (onCardChange)="onCardChange($event) " ></app-sub-product>
+    <app-sub-product [selected]="selectedCat" (onCardChangeWant)="onCardChangeWant($event)" (onCardChange)="onCardChange($event)" ></app-sub-product>
 
 <div>{{cardDataArr}}</div>
 

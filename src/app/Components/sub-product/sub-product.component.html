@@ -28,7 +28,7 @@
         <td>{{product.price| ustoeg | currency:"EGY" }}</td>
         <td><input type="number"  style="background: transparent; border: none ;" #orderd    value="1" ></td>
         <td>{{product.id}}</td>
-        <td><button class="btn btn-warning" bordder (click)="GetProductId(product.id)" > ADD TO CARD </button></td>
+        <td><button class="btn btn-warning" bordder (click)="GetProductId(product.id)" > DETAILS </button></td>
 
         <td><button class="btn btn-danger"  bordder (click)=" decrese(product , +orderd.value , +product.quantity )" > ADD TO CARD </button></td>
       </tr>

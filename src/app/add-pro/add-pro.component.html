@@ -1,0 +1,45 @@
+<div class="container">
+  <form>
+    <!-- 2 column grid layout with text inputs for the first and last names -->
+
+      <!-- Number input -->
+      <div class="form-outline mb-4">
+        <input type="number" id="form6Example6" [(ngModel)]="id" [ngModelOptions]="{standalone: true}"  class="form-control" />
+        <label class="form-label" for="form6Example6">id</label>
+      </div>
+    <!-- Text input -->
+    <div class="form-outline mb-4">
+      <input type="text" id="form6Example3" [(ngModel)]="name"  [ngModelOptions]="{standalone: true}"  class="form-control" />
+      <label class="form-label" for="form6Example3"> name</label>
+    </div>
+
+    <!-- Text input -->
+    <div class="form-outline mb-4">
+      <input type="text" id="form6Example4" class="form-control" [(ngModel)]="image" [ngModelOptions]="{standalone: true}"  />
+      <label class="form-label" for="form6Example4">image</label>
+    </div>
+
+
+    <!-- Number input -->
+    <div class="form-outline mb-4">
+      <input type="number" id="form6Example6" [(ngModel)]="catId" [ngModelOptions]="{standalone: true}" class="form-control" />
+      <label class="form-label" for="form6Example6">category id </label>
+    </div>
+
+    <!-- Number input -->
+    <div class="form-outline mb-4">
+      <input type="number" id="form6Example6" [(ngModel)]="quantity" [ngModelOptions]="{standalone: true}" class="form-control" />
+      <label class="form-label" for="form6Example6">quantity</label>
+    </div>
+
+    <!-- Number input -->
+    <div class="form-outline mb-4">
+      <input type="number" id="form6Example6" [(ngModel)]="price" [ngModelOptions]="{standalone: true}" class="form-control" />
+      <label class="form-label" for="form6Example6">price</label>
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" (click)="add(id , name , catId , price , quantity, image )" class="btn btn-primary btn-block mb-4">Place order</button>
+  </form>
+
+</div>

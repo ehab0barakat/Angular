@@ -12,6 +12,8 @@ import { CurrencyPipe } from './Pipes/currency.pipe';
 import { IdCardPipe } from './Pipes/id-card.pipe';
 import { CreditPipe } from './Pipes/credit.pipe';
 import { SubProductComponent } from './Components/sub-product/sub-product.component';
+import { ProductDetailsComponent } from './Components/product-details/product-details.component';
+import { AddProComponent } from './add-pro/add-pro.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { SubProductComponent } from './Components/sub-product/sub-product.compon
     CurrencyPipe,
     IdCardPipe,
     CreditPipe,
-    SubProductComponent
+    SubProductComponent,
+    ProductDetailsComponent,
+    AddProComponent
   ],
   imports: [
     BrowserModule,

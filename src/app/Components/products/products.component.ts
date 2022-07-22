@@ -23,7 +23,7 @@ export class ProductsComponent implements OnInit , OnChanges {
 
 
   constructor(public service:ProductsServiceService ,public router: Router) {
-    
+
     this.class_store = new ClassStore( "book shop" , ["book one" , "book two" , "book three" , "book four"] , "../../../assets/l-2.png")
   }
   ngOnChanges(changes: SimpleChanges): void {
@@ -51,9 +51,13 @@ export class ProductsComponent implements OnInit , OnChanges {
   }
 
   onCardChange(value:any){
+
     value.totPrice  = this.order * value.price ;
+
     this.finallTotPrice += value.totPrice
+
     this.cardDataArr.push(value);
+
   }
 
 

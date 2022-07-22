@@ -35,7 +35,7 @@ next(id:number) {
   if(index + 1 == this.service.productList.length - 1 ){
     index = 0 ;
   }else{
-    let index = this.service.productList.map( p => p.id ).indexOf(id)
+     index = this.service.productList.map( p => p.id ).indexOf(id)
   }
   this.prodata= this.service.productList.filter((x , p) => p == index + 1 );
 }

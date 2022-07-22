@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ICategory } from '../Model/icategory';
 import { IProduct } from '../Model/iproduct';
 
 @Injectable({
@@ -89,6 +90,13 @@ export class ProductsServiceService {
 
 
 
+  categorys:ICategory[] = [{id : 1 , name : 'electronics'},
+                           {id : 2 , name : 'clothes'},
+                           {id : 3 , name : 'cars'},
+                           {id : 4 , name : 'doors'},
+                           {id : 5 , name : 'grocery'},
+                           {id : 6 , name : 'canned food'}
+]
 
 
 
